@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+}
+.flexbox-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header-intro {
+  background-color: #1f2937;
+}
+.header-secondaryText {
+  font-size: 18px;
+  color: #e5e7eb;
+}
+
+.header-secondaryText a {
+  color: #e5e7eb;
+}
+.header {
+  display: flex;
+  height: 10%;
+}
+.header-logo {
+  margin-left: 50px;
+  margin-right: 65%;
+  /* width anpassen */
+}
+.navbar-header a {
+  padding-left: 20px;
+  /*  */
+}
+
+.intro-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  gap: 30px;
+}
+.intro-item {
+  height: 50%;
+  width: 25%;
+  color: #e5e7eb;
+}
+#intro-heading {
+  font-size: 48px;
+  font-weight: extra-bold;
+  color: #f9faf8;
+}
+.gallery-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.gallery-items {
+  display: flex;
+  gap: 100px;
+  padding-top: 60px;
+}
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+}
+.gallery-item img {
+  height: 250px;
+  width: auto;
+}
+.inspiring-div {
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  padding: 50px;
+  background-color: #e5e7eb;
+  font-size: 36px;
+  font-style: italic;
+  color: #1f2937;
+}
+#author {
+  font-weight: bold;
+  font-size: 24px;
+}
