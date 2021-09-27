@@ -1,6 +1,7 @@
 body {
   margin: 0;
 }
+
 /*  --------Main divs for the 6 website parts -----------*/
 
 /*#region*/
@@ -10,8 +11,9 @@ body {
   height: auto;
 }
 .header-intro {
+  padding-top: 10px;
   background-color: #1f2937;
-  height: 35%;
+  height: 25%;
 }
 
 .header {
@@ -26,7 +28,7 @@ body {
   height: 95%;
   gap: 30px;
 
-  padding: 30px;
+  padding: 45px;
 }
 
 .gallery-div {
@@ -34,14 +36,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
-  height: 30%;
+  padding: 30px 0;
+  height: 25%;
 }
 
 .inspiring-div {
   display: flex;
   flex-direction: column;
-  height: 30%;
+  height: 20%;
   justify-content: center;
   align-items: center;
   padding-top: 20px;
@@ -56,11 +58,11 @@ body {
   justify-content: center;
   align-content: center;
   padding: 100px;
-  height: 30%;
+  height: 25%;
 }
 
 .footer {
-  height: 5%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -84,15 +86,12 @@ body {
 
 .header-logo {
   margin-left: 50px;
-  width: 50%;
-}
-.header-logo img {
   border-radius: 30px;
   height: 25px;
 }
 
 .navbar-header {
-  width: 50%;
+  width: 100%;
   padding-right: 20px;
 }
 
@@ -110,7 +109,9 @@ body {
   height: 50%;
   width: 25%;
   color: #e5e7eb;
+  border-radius: 15px;
 }
+
 #intro-heading {
   font-size: 48px;
   font-weight: extra-bold;
@@ -123,11 +124,13 @@ body {
 .gallery-items {
   display: flex;
   gap: 100px;
-  padding-top: 60px;
+  padding-top: 40px;
 }
 .gallery-item {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .gallery-item img {
   height: 250px;
@@ -178,7 +181,7 @@ body {
   background-color: #3882f6;
   border-radius: 5px;
   color: #e5e7eb;
-  height: 50%;
+  height: 90%;
 }
 .callToAction {
   font-weight: bold;
