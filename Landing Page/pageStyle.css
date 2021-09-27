@@ -1,6 +1,9 @@
 body {
   margin: 0;
 }
+/*  --------Main divs for the 6 website parts -----------*/
+
+/*#region*/
 .flexbox-container {
   display: flex;
   flex-direction: column;
@@ -10,27 +13,10 @@ body {
   background-color: #1f2937;
   height: 35%;
 }
-.header-secondaryText {
-  font-size: 18px;
-  color: #e5e7eb;
-}
 
-.header-secondaryText a {
-  color: #e5e7eb;
-}
 .header {
   display: flex;
   height: 25px;
-}
-.header-logo {
-  margin-left: 50px;
-  margin-right: 65%;
-  border-radius: 90px;
-  /* width anpassen */
-}
-.navbar-header a {
-  padding-left: 20px;
-  /*  */
 }
 
 .intro-div {
@@ -42,6 +28,84 @@ body {
 
   padding: 30px;
 }
+
+.gallery-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  height: 30%;
+}
+
+.inspiring-div {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  background-color: #e5e7eb;
+  font-size: 36px;
+  font-style: italic;
+  color: #1f2937;
+}
+
+.sign-up {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 100px;
+  height: 30%;
+}
+
+.footer {
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #e5e7eb;
+  padding: 5px;
+}
+
+/*#endregion*/
+
+/*-------------------- Header ---------------------------*/
+
+/*#region*/
+.header-secondaryText {
+  font-size: 18px;
+  color: #e5e7eb;
+}
+
+.header-secondaryText a {
+  color: #e5e7eb;
+}
+
+.header-logo {
+  margin-left: 50px;
+  width: 50%;
+}
+.header-logo img {
+  border-radius: 30px;
+  height: 25px;
+}
+
+.navbar-header {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.navbar-header a {
+  padding-left: 20px;
+  float: right;
+  /*  */
+}
+/*#endregion*/
+
+/*--------------------- Intro ---------------------------*/
+
+/*#region*/
 .intro-item {
   height: 50%;
   width: 25%;
@@ -52,14 +116,10 @@ body {
   font-weight: extra-bold;
   color: #f9faf8;
 }
-.gallery-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
-  height: 30%;
-}
+/*#endregion*/
+
+/*-------------------- Gallery --------------------------*/
+/*#region*/
 .gallery-items {
   display: flex;
   gap: 100px;
@@ -72,32 +132,28 @@ body {
 .gallery-item img {
   height: 250px;
   width: auto;
+  border: #f9faf8 solid;
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
-.inspiring-div {
-  display: flex;
-  flex-direction: column;
-  height: 30%;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
-  background-color: #e5e7eb;
-  font-size: 36px;
-  font-style: italic;
-  color: #1f2937;
+/*#endregion*/
+
+/*------------------ Inspiration ------------------------*/
+
+/*#region*/
+#quote {
+  padding-top: 20px;
 }
 #author {
   font-weight: bold;
   font-size: 24px;
   padding-left: 50%;
 }
-.sign-up {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding: 100px;
-  height: 30%;
-}
-.sign-upWrapper {
+/*#endregion*/
+
+/*-------------------- Sign-up --------------------------*/
+/*#region*/
+.signup-Wrapper {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -107,14 +163,29 @@ body {
   color: #e5e7eb;
   padding: 50px;
 }
-.footer {
-  height: 5%;
+.signup-text {
+  width: 70%;
+}
+.signup-item {
   display: flex;
   justify-content: center;
   align-content: center;
-  color: #e5e7eb;
-  padding: 5px;
+  padding-top: 20px;
 }
+.signup-btn {
+  border: 1px solid;
+  border-color: white;
+  background-color: #3882f6;
+  border-radius: 5px;
+  color: #e5e7eb;
+  height: 50%;
+}
+.callToAction {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+/*#endregion*/
 
 .btn {
   background-color: #3882f6;
@@ -122,13 +193,5 @@ body {
   border-color: #3882f6;
   border-radius: 5px;
   margin-top: 5px;
-  color: #e5e7eb;
-}
-
-.signup-btn {
-  border: 1px solid;
-  border-color: white;
-  background-color: #3882f6;
-  border-radius: 5px;
   color: #e5e7eb;
 }
