@@ -57,7 +57,7 @@ function calc(mathArr) {
       console.log(mathArr);
     }
   }
-  displayValue(mathArr[0], false);
+  displayResult(mathArr[0]);
 }
 
 function operate(num1, operator, num2) {
@@ -81,4 +81,20 @@ function displayValue(value, isOperator) {
   textBox = document.getElementsByClassName("display");
   if (isOperator) textBox[0].textContent += " " + value + " ";
   else textBox[0].textContent += value;
+
+  hiddenBox = document.getElementsByClassName("hidden-span");
+  if (value != "=") {
+    if (isOperator) hiddenBox[0].textContent += " " + value + " ";
+    else hiddenBox[0].textContent += value;
+  }
 }
+
+function displayResult(value) {
+  textBox = document.getElementsByClassName("display");
+  textBox[0].textContent = value;
+
+  hiddenBox = document.getElementsByClassName("hidden-span");
+  hiddenBox[0].style.visibility = "visible";
+}
+
+function clear() {}

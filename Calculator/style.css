@@ -1,5 +1,4 @@
 body {
-  height: 100%;
   display: flex;
   padding-top: 10%;
   justify-content: center;
@@ -18,22 +17,36 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 670px;
-  width: 600px;
+
   border: darkgray solid;
   background-color: lightgray;
 }
 .display {
-  width: 90%;
   text-align: right;
   font-size: 40px;
   background: darkgrey;
-  margin: 0 0 20 0;
+  height: 40px;
+  width: 550px;
+}
+.second-display {
+  display: flex;
+  text-align: right;
+  font-size: 30px;
+  background: darkgrey;
+  margin: 40 0 0 0;
+  height: 30px;
+  width: 550px;
+}
+
+.hidden-span {
+  visibility: hidden;
+  height: 30px;
+  width: 500px;
 }
 
 .input-block {
   display: flex;
-  height: 80%;
+  padding: 30 30;
 }
 .number-container {
   margin-right: 20px;
