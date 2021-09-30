@@ -1,63 +1,79 @@
-number = "";
-operatorArr = [];
+let number = "";
+let operatorArr = [];
+let mathFunction = [];
+let mathArr = [];
+
+const operator = document.getElementsByClassName("operator");
+const textBox = document.getElementsByClassName("display");
+const hiddenBox = document.getElementsByClassName("hidden-span");
+const allClearBtn = document.getElementsByClassName("clearButton");
+
 function storeNum(value) {
   if (value === undefined) value = "";
   number += value;
-  displayValue(value, false);
-
-  const operator = document.getElementsByClassName("operator");
 
   operatorArr = Array.from(operator);
-
   operatorArr.forEach((el, index) =>
     operatorArr[index].addEventListener("click", () => (number = ""))
   );
 
+  displayValue(value, false);
+
+  allClearBtn[0].addEventListener("click", () => {
+    clearDisplay();
+    number = "";
+    hiddenBox[0].style.visibility = "hidden";
+  });
   return parseInt(number);
 }
 
-function storeOperator(value) {
-  displayValue(value, true);
-  operator = value;
+function storeOperator(operator) {
+  displayValue(operator, true);
+
   num = storeNum();
-  storeArr(num, operator);
-}
-mathFunction = [];
 
-function storeArr(num, operator) {
+  calc(num, operator);
+}
+
+function calc(num, operator) {
+  allClearBtn[0].addEventListener("click", () => {
+    clearStore(mathArr, 0, mathArr.length);
+    clearDisplay();
+    hiddenBox[0].style.visibility = "hidden";
+  });
+
   if (num !== undefined && operator !== undefined) {
-    mathFunction.push(num);
-    mathFunction.push(operator);
-    console.log("Ich bin das mathFunctionArray" + mathFunction);
-    if (operator == "=") {
-      calc(mathFunction);
+    if (mathArr.length % 2 == 0) {
+      mathArr.push(num);
+    } else {
+      hiddenBox[0].textContent = mathArr[0] + " " + operator + " ";
+      hiddenBox[0].style.visibility = "hidden";
     }
+    mathArr.push(operator);
   }
-}
-mathArr = [];
-operatorIndex = 0;
-
-function calc(mathArr) {
-  while (operatorIndex != -1) {
-    operatorIndex = mathArr.findIndex(
-      (element) => element == "*" || element == "/"
-    );
-    if (operatorIndex == -1) {
+  if (operator == "=") {
+    operatorIndex = 0;
+    while (operatorIndex != -1) {
       operatorIndex = mathArr.findIndex(
-        (element) => element == "+" || element == "-"
+        (element) => element == "*" || element == "/"
       );
+      if (operatorIndex == -1) {
+        operatorIndex = mathArr.findIndex(
+          (element) => element == "+" || element == "-"
+        );
+      }
+      if (operatorIndex != -1) {
+        result = operate(
+          mathArr[operatorIndex - 1],
+          mathArr[operatorIndex],
+          mathArr[operatorIndex + 1]
+        );
+        mathArr.splice(operatorIndex - 1, 3, result);
+      }
     }
-    if (operatorIndex != -1) {
-      result = operate(
-        mathArr[operatorIndex - 1],
-        mathArr[operatorIndex],
-        mathArr[operatorIndex + 1]
-      );
-      mathArr.splice(operatorIndex - 1, 3, result);
-      console.log(mathArr);
-    }
+    clearStore(mathArr, 1, mathArr.length);
+    displayResult(mathArr[0]);
   }
-  displayResult(mathArr[0]);
 }
 
 function operate(num1, operator, num2) {
@@ -78,11 +94,9 @@ function operate(num1, operator, num2) {
 }
 
 function displayValue(value, isOperator) {
-  textBox = document.getElementsByClassName("display");
   if (isOperator) textBox[0].textContent += " " + value + " ";
   else textBox[0].textContent += value;
 
-  hiddenBox = document.getElementsByClassName("hidden-span");
   if (value != "=") {
     if (isOperator) hiddenBox[0].textContent += " " + value + " ";
     else hiddenBox[0].textContent += value;
@@ -90,11 +104,22 @@ function displayValue(value, isOperator) {
 }
 
 function displayResult(value) {
-  textBox = document.getElementsByClassName("display");
   textBox[0].textContent = value;
-
-  hiddenBox = document.getElementsByClassName("hidden-span");
   hiddenBox[0].style.visibility = "visible";
+  return value;
 }
 
-function clear() {}
+function clearDisplay() {
+  clearFirstDisplay();
+  clearSecondDisplay();
+}
+function clearFirstDisplay() {
+  textBox[0].textContent = "";
+}
+
+function clearSecondDisplay() {
+  hiddenBox[0].textContent = "";
+}
+function clearStore(arr, index, length) {
+  arr.splice(index, length);
+}
