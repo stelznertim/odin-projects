@@ -2,8 +2,14 @@ body {
   margin: 0;
 }
 
-/*  --------Main divs for the 6 website parts -----------*/
-
+/*  --------Main containern for the 6 website parts -----------*/
+/* 1.html tags aus css klassen rauslassen
+  2. attribute aus klassennamen rauslassen wenn es um mehrere attribute geht 
+  3. komponenten container in die eigene region reinpacken
+  4. section anstatt div für struktur der seite
+  5. vielfache voneinander bei pixelwerten
+  6. prozente möglichst rauslassen
+*/
 /*#region*/
 .flexbox-container {
   display: flex;
@@ -21,14 +27,14 @@ body {
   height: 25px;
 }
 
-.intro-div {
+.intro-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 95%;
   gap: 30px;
 
-  padding: 45px;
+  padding: 45 50 45 50;
 }
 
 .gallery-div {
@@ -38,19 +44,6 @@ body {
   align-items: center;
   padding: 30px 0;
   height: 25%;
-}
-
-.inspiring-div {
-  display: flex;
-  flex-direction: column;
-  height: 20%;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-  background-color: #e5e7eb;
-  font-size: 36px;
-  font-style: italic;
-  color: #1f2937;
 }
 
 .sign-up {
@@ -144,6 +137,18 @@ body {
 /*------------------ Inspiration ------------------------*/
 
 /*#region*/
+.inspiring-div {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  background-color: #e5e7eb;
+  font-size: 36px;
+  font-style: italic;
+  color: #1f2937;
+}
 #quote {
   padding-top: 20px;
 }

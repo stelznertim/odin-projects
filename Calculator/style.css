@@ -1,0 +1,44 @@
+body {
+  height: 100%;
+  display: flex;
+  padding-top: 10%;
+  justify-content: center;
+  align-content: center;
+}
+button {
+  height: 100px;
+  width: 100px;
+  margin: 20 10 0 0px;
+  font-size: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.flexbox-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 670px;
+  width: 600px;
+  border: darkgray solid;
+  background-color: lightgray;
+}
+.display {
+  width: 90%;
+  text-align: right;
+  font-size: 40px;
+  background: darkgrey;
+  margin: 0 0 20 0;
+}
+
+.input-block {
+  display: flex;
+  height: 80%;
+}
+.number-container {
+  margin-right: 20px;
+}
+
+#equal {
+  width: 210px;
+}

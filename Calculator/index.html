@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="Calculator.js" defer></script>
+    <title>Calculator</title>
+  </head>
+
+  <body>
+    <div class="flexbox-container">
+      <div class="display"></div>
+      <div class="input-block">
+        <div class="number-container">
+          <div class="button-row">
+            <button value="7" onclick="storeNum(this.value)">7</button>
+            <button value="8" onclick="storeNum(this.value)">8</button>
+            <button value="9" onclick="storeNum(this.value)">9</button>
+          </div>
+          <div class="button-row">
+            <button value="4" onclick="storeNum(this.value)">4</button>
+            <button value="5" onclick="storeNum(this.value)">5</button>
+            <button value="6" onclick="storeNum(this.value)">6</button>
+          </div>
+          <div class="button-row">
+            <button value="1" onclick="storeNum(this.value)">1</button>
+            <button value="2" onclick="storeNum(this.value)">2</button>
+            <button value="3" onclick="storeNum(this.value)">3</button>
+          </div>
+          <div class="button-row">
+            <button value="0" onclick="storeNum(this.value)">0</button>
+            <button onclick="storeNum(this.value)">.</button>
+            <button onclick="storeNum(this.value)">e</button>
+          </div>
+        </div>
+        <div class="operator-container">
+          <div class="button-row">
+            <button>C</button>
+            <button onclick="clear()">AC</button>
+          </div>
+          <div class="button-row">
+            <button
+              class="operator"
+              value="+"
+              onclick="storeOperator(this.value)"
+            >
+              +
+            </button>
+            <button
+              class="operator"
+              value="-"
+              onclick="storeOperator(this.value)"
+            >
+              -
+            </button>
+          </div>
+          <div class="button-row">
+            <button
+              class="operator"
+              value="*"
+              onclick="storeOperator(this.value)"
+            >
+              *
+            </button>
+            <button
+              class="operator"
+              value="/"
+              onclick="storeOperator(this.value)"
+            >
+              /
+            </button>
+          </div>
+          <div>
+            <button
+              class="operator"
+              value="="
+              id="equal"
+              onclick="storeOperator(this.value)"
+            >
+              =
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
